@@ -21,7 +21,9 @@ public class Snake {
 
     void veHinh(Graphics g2d) throws IOException {
         for (int i = 0; i < mangHinh.length; i++) {
-            g2d.fill3DRect(mangHinh[i].x, mangHinh[0].y, dai, rong, true);
+            if(mangHinh[i] != null) {
+                g2d.fill3DRect(mangHinh[i].x, mangHinh[0].y, dai, rong, true);
+            }
         }
     }
 

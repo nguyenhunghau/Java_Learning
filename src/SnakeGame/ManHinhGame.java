@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -12,7 +14,7 @@ import javax.swing.Timer;
  *
  * @author PC
  */
-public class ManHinhGame extends JPanel {
+public class ManHinhGame extends JPanel  implements KeyListener{
 
     Snake snake = new Snake();
     Prey prey = new Prey();
@@ -27,6 +29,7 @@ public class ManHinhGame extends JPanel {
             }
         });
         timer.start();
+            
     }
 
     @Override
@@ -40,4 +43,21 @@ public class ManHinhGame extends JPanel {
         } catch (Exception ex) {
         }
     }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        System.out.println(e.getKeyCode());
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        System.out.println(e.getKeyCode());
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        System.out.println(e.getKeyCode());
+    }
+    
+    //https://docstore.mik.ua/orelly/webprog/DHTML_javascript/0596004672_jvdhtmlckbk-app-b.html
 }

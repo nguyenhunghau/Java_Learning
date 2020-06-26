@@ -15,23 +15,26 @@ import javax.swing.JPanel;
 public class ManHinh extends JFrame {
 
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
+//        EventQueue.invokeLater(new Runnable() {
+//            @Override
+//            public void run() {
                 ManHinh frame = new ManHinh();
                 frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.X_AXIS));
 
                 ManHinhGame panel = new ManHinhGame();
                 panel.setMaximumSize(new Dimension(700, 700));
                 panel.setBackground(Color.BLACK);
+                panel.addKeyListener(panel);
+                panel.setFocusable(true);
+                frame.add(panel);
 
                 frame.taoButton();
-                frame.add(panel);
                 frame.setSize(1500, 700);
                 frame.setResizable(false);
+                
                 frame.setVisible(true);
-            }
-        });
+//            }
+//        });
     }
 
     void taoButton() { 
